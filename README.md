@@ -6,7 +6,7 @@
 
 Shows useful player stats like **deaths**, **kills**, **playtime**, **position**, and **current dimension** to **everyone** through a compact, configurable rotating readout in the **player list**.
 
-> **Rotating player list with all info entries enabled**
+> **Player list with all info entries enabled**
 >
 > ![preview](showcase/preview.gif)
 
