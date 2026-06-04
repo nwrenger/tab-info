@@ -1,0 +1,9 @@
+
+modLoader = 'javafml'
+loaderVersion = '[1,)'
+license = 'LGPL-3.0-or-later'
+showAsResourcePack = false
+mods = [
+    { modId = 'tab_info', version = '__VERSION__', displayName = 'Tab Info', description = 'Cycles configurable player info like deaths, kills, playtime, position, and dimension in the tab list.', logoFile = 'pack.png', updateJSONURL = 'https://api.modrinth.com/updates/TODO/forge_updates.json?neoforge=only', authors = 'nwrenger', displayURL = 'https://modrinth.com/datapack/tab-info' },
+]
+issueTrackerURL = 'https://github.com/nwrenger/tab-info/issues'

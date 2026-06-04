@@ -1,0 +1,110 @@
+name: Package datapack and mod on release
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-attach-artifacts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Compute names and version
+        id: vars
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          VERSION="${{ github.event.release.tag_name || github.ref_name }}"
+
+          echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "ZIP_NAME=tab-info-${VERSION}.zip" >> "$GITHUB_OUTPUT"
+          echo "JAR_NAME=tab-info-${VERSION}+mod.jar" >> "$GITHUB_OUTPUT"
+
+      - name: Validate inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f pack.mcmeta
+          test -f pack.png
+          test -d data
+
+          shopt -s nullglob
+          for d in overlay_*/; do
+            test -d "$d" || { echo "Not a directory: $d"; exit 1; }
+          done
+
+          test -f META-INF/mods.toml
+          test -f META-INF/neoforge.mods.toml
+          test -f fabric.mod.json
+          test -f quilt.mod.json
+
+      - name: Create datapack zip
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          zip -r "${{ steps.vars.outputs.ZIP_NAME }}" \
+            pack.mcmeta \
+            pack.png \
+            overlay_* \
+            data \
+            LICENSE \
+            LICENSE.GPL
+
+      - name: Inject release version into mod metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          VERSION="${{ steps.vars.outputs.VERSION }}"
+
+          for f in META-INF/* fabric.mod.json quilt.mod.json; do
+            [ -f "$f" ] || continue
+            sed -i "s/__VERSION__/${VERSION}/g" "$f"
+          done
+
+      - name: Create mod jar
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf .mod-build
+          mkdir -p .mod-build
+
+          cp pack.mcmeta .mod-build/pack.mcmeta
+          cp pack.png .mod-build/pack.png
+          cp -r data .mod-build/data
+
+          shopt -s nullglob
+          for d in overlay_*; do
+            cp -r "$d" .mod-build/
+          done
+
+          cp -r META-INF .mod-build/META-INF
+          cp fabric.mod.json .mod-build/fabric.mod.json
+          cp quilt.mod.json .mod-build/quilt.mod.json
+          cp LICENSE .mod-build/LICENSE
+          cp LICENSE.GPL .mod-build/LICENSE.GPL
+          (
+            cd .mod-build
+            zip -r "../${{ steps.vars.outputs.JAR_NAME }}" .
+          )
+
+      - name: Attach artifacts to release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            ${{ steps.vars.outputs.ZIP_NAME }}
+            ${{ steps.vars.outputs.JAR_NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

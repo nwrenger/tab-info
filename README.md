@@ -67,3 +67,10 @@ Please open issues or PRs on [GitHub](https://github.com/nwrenger/tab-info/issue
 ## License
 
 This project is licensed under the **LGPLv3 License**. See [LICENSE](https://github.com/nwrenger/tab-info/blob/main/LICENSE) for details.
+
+# TODOS BEFORE RELEASING (will be removed when done):
+
+- [ ] Design `pack.png`
+- [ ] Make it available for 21.x and 26.x (todo overlay for older text component format, see disable dimensions)
+- [ ] Make modrinth release page and fill its id inside `META-INF/*`
+- [ ] Make a test release (test release pipeline)
