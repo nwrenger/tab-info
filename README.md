@@ -6,9 +6,9 @@
 
 Shows useful player stats like **deaths**, **kills**, **playtime**, **position**, and **current dimension** to **everyone** through a compact, configurable rotating readout in the **player list**.
 
-> Perfect for multiplayer servers: no client install needed, fully server-side, and still works in singleplayer.
-
-![preview](showcase/preview.gif)
+> **Rotating player list with all info entries enabled**
+>
+> ![preview](showcase/preview.gif)
 
 ## Features
 
@@ -19,6 +19,8 @@ Tab Info rotates every **2 seconds** through configurable entries in the player 
 - Playtime in hours
 - Current position
 - Current dimension
+
+It works in **both** singleplayer and multiplayer while being **fully server-side**. Players **do not** need to install anything.
 
 > The display is compact and designed to stay readable without taking over the tab list.
 
@@ -42,9 +44,7 @@ Open the configuration panel by the following command:
 
 ![config_panel](showcase/config_panel.png)
 
-From here, you can toggle each tab entry on or off.
-
-> If every entry is disabled, the tab list value is hidden.
+From here, you can **toggle** each info entry **on** or **off**. If **every** entry is **disabled**, the tab list value is **hidden**.
 
 ## Uninstallation
 
