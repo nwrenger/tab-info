@@ -70,8 +70,8 @@ This project is licensed under the **LGPLv3 License**. See [LICENSE](https://git
 
 # TODOS BEFORE RELEASING (will be removed when done):
 
-- [ ] Design `pack.png`
-- [ ] Design data pack/mod advancement (example see disable dimensions)
-- [ ] Make it available for 21.x and 26.x (todo overlay for older text component format and advancement icon, example see disable dimensions)
-- [ ] Make modrinth release page and fill its id inside `META-INF/*`
+- [x] Design `pack.png`
+- [x] Design data pack/mod advancement (example see disable dimensions)
+- [x] Make it available for 21.x and 26.x (todo overlay for older text component format and advancement icon, example see disable dimensions)
+- [x] Make modrinth release page and fill its id inside `META-INF/*`
 - [ ] Make a test release (test release pipeline)

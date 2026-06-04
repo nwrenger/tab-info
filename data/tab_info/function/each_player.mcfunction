@@ -1,3 +1,3 @@
 execute as @a \
     at @s \
-    run function tab_info:display
+    run function tab_info:display/main

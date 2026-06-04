@@ -6,9 +6,6 @@ scoreboard objectives add deaths deathCount
 scoreboard objectives add kills playerKillCount
 scoreboard objectives add playtime minecraft.custom:minecraft.play_time
 scoreboard objectives add playtime_hours dummy
-scoreboard objectives add pos_x dummy
-scoreboard objectives add pos_y dummy
-scoreboard objectives add pos_z dummy
 
 scoreboard players set #mode tab_info 0
 scoreboard players set #ticks_per_hour tab_info 72000
