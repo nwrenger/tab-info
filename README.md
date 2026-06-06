@@ -4,9 +4,11 @@
 [![modrinth](https://img.shields.io/badge/dynamic/json?url=https://api.modrinth.com/v2/project/tab-info&label=downloads&query=$.downloads&color=#00AF5C)](https://modrinth.com/datapack/tab-info)
 [![modrinth](https://img.shields.io/modrinth/game-versions/tab-info.svg)](https://modrinth.com/datapack/tab-info)
 
-Shows useful player stats like **deaths**, **kills**, **playtime**, **position**, and **current dimension** to **everyone** through a compact, configurable rotating readout in the **player list**.
+Shows useful player stats like **deaths**, **kills**, **playtime**, **position**, and **current dimension** to **everyone** through a compact, configurable readout in the **player list**.
 
-> Rotates every 2 seconds, works in multiplayer and singleplayer, and is fully server-side, so players do not need to install anything. Perfect for PvP servers, local worlds with friends, and more.
+The readout rotates every 2 seconds, works in multiplayer and singleplayer, and is fully server-side, so players do not need to install anything.
+
+> Perfect for PvP servers, local worlds with friends, and more.
 
 ![preview](showcase/preview.gif)
 
