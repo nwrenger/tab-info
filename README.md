@@ -6,7 +6,7 @@
 
 Shows useful player stats like **deaths**, **kills**, **playtime**, **position**, and **current dimension** to **everyone** through a compact, configurable readout in the **player list**.
 
-The readout rotates every 2 seconds, works in multiplayer and singleplayer, and is fully server-side, so players do not need to install anything.
+The readout rotates by default every 2 seconds, works in multiplayer and singleplayer, and is fully server-side, so players do not need to install anything.
 
 > Perfect for PvP servers, local worlds with friends, and more.
 
