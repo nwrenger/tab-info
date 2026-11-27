@@ -20,5 +20,10 @@ function tab_info:config/template {entry: "playtime", label: "Playtime", color: 
 function tab_info:config/template {entry: "pos", label: "Position", color: "yellow"}
 function tab_info:config/template {entry: "world", label: "World", color: "light_purple"}
 
+tellraw @s ""
+
+# Mode Duration
+function tab_info:config/mode_duration_template with storage tab_info:config
+
 # Footer
 tellraw @s ""
