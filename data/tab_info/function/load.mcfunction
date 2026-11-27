@@ -13,6 +13,8 @@ scoreboard players set #ticks_per_hour tab_info 72000
 # Config
 execute unless data storage tab_info:config entries \
     run data modify storage tab_info:config entries set value { deaths: true, kills: true, playtime: true, pos: true, world: true }
+execute unless data storage tab_info:config mode_duration \
+    run data modify storage tab_info:config mode_duration set value 2
 
 # Apply first mode based on config
 function tab_info:mode/skip

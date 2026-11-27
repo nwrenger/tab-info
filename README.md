@@ -32,7 +32,7 @@ Open the configuration panel by the following command:
 
 ![config_panel](showcase/config_panel.png)
 
-From here, you can toggle each info entry on or off. If every entry is disabled, Tab Info is hidden from the player list.
+From here, you can toggle each info entry on or off and edit the mode duration time in seconds. If every entry is disabled, Tab Info is hidden from the player list.
 
 ## Uninstallation
 
